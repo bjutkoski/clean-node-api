@@ -26,13 +26,13 @@ const makeAddAccount = (): AddAccount => {
   return new AddAcountStub()
 }
 
-interface SubTypes {
+interface SutTypes {
   sut: SignUpController
   emailValidatorStub: EmailValidator
   addAccountStub: AddAccount
 }
 
-const makeSut = (): SubTypes => {
+const makeSut = (): SutTypes => {
   const emailValidatorStub = makeEmailValidator()
   const addAccountStub = makeAddAccount()
   const sut = new SignUpController(emailValidatorStub, addAccountStub)
